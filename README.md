@@ -39,6 +39,8 @@ Simply double-click the `sniffer.command` file to start the program.
 > **Note:** A terminal window will open asking for your password (sudo access is required for network operations).  
 > **Closing this terminal window will automatically shut down the server and stop the attack.**
 
+Once the server is running, open your interface at: 👉 **[http://localhost:5001](http://localhost:5001)**
+
 ## Requirements
 
 *   Python 3.8+
