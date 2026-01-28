@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env
+*.log
+certs/
+venv/
+.idea/
+.vscode/
+*.webloc
+sniffer copia.command

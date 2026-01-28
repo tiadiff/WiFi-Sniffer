@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetSniff // Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="status-indicator" id="global-status">
+                <span class="dot"></span> IDLE
+            </div>
+        </header>
+
+        <!-- Main Grid -->
+        <main class="grid-layout">
+
+            <!-- Sidebar / Controls -->
+            <section class="panel controls">
+                <h2><i class="fa-solid fa-gamepad"></i> Controls</h2>
+
+                <div class="control-group">
+                    <label>Target IP</label>
+                    <input type="text" id="target-ip" placeholder="e.g. 192.168.1.15">
+                </div>
+
+                <div class="control-group">
+                    <label>Gateway IP</label>
+                    <input type="text" id="gateway-ip" placeholder="e.g. 192.168.1.1">
+                </div>
+
+                <div class="actions">
+                    <button id="btn-scan" onclick="scanNetwork()">
+                        <i class="fa-solid fa-radar"></i> Scan Net
+                    </button>
+                    <button id="btn-start" class="primary" onclick="startAttack()">
+                        <i class="fa-solid fa-skull"></i> Start Sniff
+                    </button>
+                    <button id="btn-stop" class="danger hidden" onclick="stopAttack()">
+                        <i class="fa-solid fa-stop"></i> Stop
+                    </button>
+                </div>
+                <br><br>
+                <!-- Injection Panel -->
+                <h2><i class="fa-solid fa-syringe"></i> JS Injection (HTTP Only)</h2>
+                <div class="control-group">
+                    <textarea id="injection-code"
+                        style="width:100%; height:80px; background:var(--bg-dark); color:var(--success); border:1px solid var(--border); padding:10px; font-family:monospace;">alert('YOU HAVE BEEN HACKED!');</textarea>
+                </div>
+                <div class="actions" style="flex-direction: row; gap: 10px;">
+                    <button id="btn-inject" onclick="toggleInjection()" style="flex:1;">
+                        <i class="fa-solid fa-bug"></i> Enable Injection
+                    </button>
+                    <button id="btn-block-https" class="danger" onclick="toggleHttpsBlock()" style="flex:1;">
+                        <i class="fa-solid fa-ban"></i> Block HTTPS
+                    </button>
+                </div>
+            </section>
+
+
+
+            <!-- Device List -->
+            <section class="panel devices">
+                <h2><i class="fa-solid fa-network-wired"></i> Available Devices</h2>
+                <div class="table-wrapper">
+                    <table id="device-table">
+                        <thead>
+                            <tr>
+                                <th>IP Address</th>
+                                <th>MAC Address</th>
+                                <th>Vendor</th>
+                                <th>Hostname</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" class="text-center text-muted">No scan results yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Live Logs -->
+            <section class="panel logs">
+                <h2><i class="fa-solid fa-terminal"></i> Traffic Intercepted</h2>
+                <div class="log-console" id="log-console">
+                    <!-- Logs will appear here -->
+                    <div class="log-entry system">Waiting for traffic...</div>
+                </div>
+            </section>
+
+
+
+        </main>
+    </div>
+
+    <div id="inspector-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-microscope"></i> Packet Inspector</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <pre id="modal-data"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
