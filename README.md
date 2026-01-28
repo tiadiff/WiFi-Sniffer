@@ -1,57 +1,50 @@
 # NetSniff: Advanced Network Analysis & MITM Suite
 
-**NetSniff** è un framework professionale per l'intercettazione e l'analisi del traffico di rete in tempo reale. Grazie a un'interfaccia dashboard moderna e intuitiva, il software permette di monitorare, ispezionare e manipolare i dati degli altri dispositivi connessi alla rete locale.
+**NetSniff** is a professional framework for real-time network traffic interception and analysis. Featuring a modern and intuitive dashboard interface, this software allows you to monitor, inspect, and manipulate data from other devices connected to the local network.
 
-## Caratteristiche Principali
+## Key Features
 
-*   **Discovery Intelligente:** Scansione della rete con identificazione automatica di produttori (Apple, Samsung, ecc.) e host.
-*   **Traffic Sniffing:** Monitoraggio in tempo reale di query DNS e richieste HTTP con ispettore di pacchetti integrato.
-*   **JS Injection Engine:** Iniettore di codice JavaScript personalizzato per modificare l'esperienza web dei dispositivi target (in siti HTTP).
-*   **Security Bypass:** Tecniche di SSL Stripping e HTTPS Blocking per forzare il traffico su protocolli leggibili.
-*   **DNS Mapping:** Associazione automatica tra indirizzi IP e domini reali per una leggibilità totale dei log, anche su traffico criptato.
+*   **Smart Discovery:** Network scanning with automatic identification of vendors (Apple, Samsung, etc.) and hosts.
+*   **Traffic Sniffing:** Real-time monitoring of DNS queries and HTTP requests with integrated packet inspector.
+*   **JS Injection Engine:** Custom JavaScript code injector to modify the web experience of target devices (on HTTP sites).
+*   **Security Bypass:** SSL Stripping and HTTPS Blocking techniques to force traffic onto readable protocols.
+*   **DNS Mapping:** Automatic association between IP addresses and real domains for total log readability, even on encrypted traffic.
 
-*NetSniff trasforma il tuo computer in un potente centro di controllo per il monitoraggio e il testing della sicurezza di rete.*
+*NetSniff transforms your computer into a powerful control center for network security monitoring and testing.*
 
 ## Disclaimer ⚠️
 
-**QUESTO SOFTWARE È STATO CREATO A SCOPO PURAMENTE EDUCATIVO.**
-L'autore non si assume alcuna responsabilità per l'uso improprio di questo strumento. L'intercettazione del traffico dati su reti altrui senza autorizzazione è un reato perseguibile penalmente. Utilizzare solo su reti di propria proprietà o con esplicito consenso.
+**THIS SOFTWARE WAS CREATED FOR EDUCATIONAL PURPOSES ONLY.**
+The author assumes no responsibility for the improper use of this tool. Intercepting data traffic on third-party networks without authorization is a punishable offense. Use only on networks you own or with explicit consent.
 
-## Installazione
+## Installation
 
-1.  Clona la repository:
+1.  Clone the repository:
     ```bash
     git clone https://github.com/tiadiff/WiFi-Sniffer.git
     cd WiFi-Sniffer
     ```
 
-2.  Installa le dipendenze:
+2.  Install dependencies:
     ```bash
     pip install -r requirements.txt
     ```
 
-3.  (Opzionale) Assicurati di avere i permessi di amministrazione, necessari per `scapy` e `pfctl`.
+3.  (Optional) Ensure you have administrative permissions, required for `scapy` and `pfctl`.
 
-## Utilizzo
+## Usage
 
-1.  Avvia lo sniffer (richiede sudo):
-    ```bash
-    sudo python sniffer.py
-    ```
-    *In alternativa, su macOS puoi usare lo script `sniffer.command`.*
+Simply double-click the `sniffer.command` file to start the program.
 
-2.  Apri il browser e vai alla dashboard:
-    [http://localhost:5001](http://localhost:5001)
+> **Note:** A terminal window will open asking for your password (sudo access is required for network operations).  
+> **Closing this terminal window will automatically shut down the server and stop the attack.**
 
-3.  Seleziona il **Target IP** (Vittima) e il **Gateway IP** (Router).
-4.  Attiva le funzioni desiderate (Sniffing, Injection, HTTPS Block).
-
-## Requisiti
+## Requirements
 
 *   Python 3.8+
-*   macOS (Consigliato per supporto nativo `pfctl`) o Linux
-*   Permessi di Root/Sudo
+*   macOS (Recommended for native `pfctl` support) or Linux
+*   Root/Sudo permissions
 
-## Licenza
+## License
 
 MIT License.
