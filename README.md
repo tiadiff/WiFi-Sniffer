@@ -2,8 +2,6 @@
 
 **NetSniff** è un framework professionale per l'intercettazione e l'analisi del traffico di rete in tempo reale. Grazie a un'interfaccia dashboard moderna e intuitiva, il software permette di monitorare, ispezionare e manipolare i dati degli altri dispositivi connessi alla rete locale.
 
-![NetSniff Dashboard](https://via.placeholder.com/800x400.png?text=NetSniff+Dashboard+Preview)
-
 ## Caratteristiche Principali
 
 *   **Discovery Intelligente:** Scansione della rete con identificazione automatica di produttori (Apple, Samsung, ecc.) e host.
