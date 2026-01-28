@@ -2,6 +2,8 @@
 
 **NetSniff** is a professional framework for real-time network traffic interception and analysis. Featuring a modern and intuitive dashboard interface, this software allows you to monitor, inspect, and manipulate data from other devices connected to the local network.
 
+<img width="550" height="583" alt="Schermata 2026-01-28 alle 22 42 43" src="https://github.com/user-attachments/assets/87bcc3be-ed3d-433a-8a09-012dd5025d8f" />
+
 ## Key Features
 
 *   **Smart Discovery:** Network scanning with automatic identification of vendors (Apple, Samsung, etc.) and hosts.
